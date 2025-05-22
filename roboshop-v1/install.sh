@@ -2,7 +2,7 @@
 
 env=$1 
 action=$2
-if [ -z "$env" | -z "$action"]; then
+if [ -z "$env" | -z "$action" ]; then
   echo -e "\e[33m Usage: $0 <environment> <action> \e[0m"
   echo -e "bash $0 dev apply"
   exit 1
