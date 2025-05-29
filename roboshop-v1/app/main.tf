@@ -20,7 +20,9 @@ resource "aws_route53_record" "main" {
 
 resource "null_resource" "app" {
   depends_on = [aws_instance.main, aws_route53_record.main]
-
+  triggers = {
+    always = timestamp()
+  }
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
