@@ -17,19 +17,19 @@ pipeline {
             steps {
                 sh "terraform --version"
                 sh "rm -rf .terraform*"
-                sh "./roboshop-v1"
+                sh "cd ./roboshop-v1"
                 sh "terraform init  -backend-config=env-${params.environment}/state.tfvars -var-file=env-${params.environment}/main.tfvars -var token=${vault_token}; "
             }
         }
         stage('Terraform Plan') {
             steps {
-                sh "./roboshop-v1"
+                sh "cd ./roboshop-v1"
                 sh "terraform plan -var-file=env-${params.environment}/main.tfvars -var token=${vault_token}"
             }
         }
         stage('Terraform Apply') {
             steps {
-                sh "./roboshop-v1"
+                sh "cd ./roboshop-v1"
                 sh "terraform ${params.action} -var-file=env-${params.environment}/main.tfvars -var token=${vault_token} -auto-approve"
                 sh "echo Apply Completed"
             }
