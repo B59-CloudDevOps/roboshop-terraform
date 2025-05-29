@@ -36,3 +36,4 @@ variable "componets" {
 }
 
 variable "env" {}
+variable "token" {}

@@ -7,4 +7,5 @@ module "app" {
   name                   = each.key
   zone_id                = data.aws_route53_zone.main.id
   env                    = var.env
+  token                  = var.token
 }
