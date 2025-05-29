@@ -16,8 +16,6 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 sh "terraform --version"
-                sh "rm -rf .terraform*"
-                sh "pwd && ls -ltr"
                 sh "cd roboshop-v1 && terraform init  -backend-config=env-${params.environment}/state.tfvars -var-file=env-${params.environment}/main.tfvars -var token=${vault_token}; "
             }
         }

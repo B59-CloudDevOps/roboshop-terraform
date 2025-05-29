@@ -26,8 +26,8 @@ resource "null_resource" "app" {
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
-      user     = "ec2-user"
-      password = "DevOps321"
+      user     = data.vault_generic_secret.ssh.data["ssh_username"]
+      password = data.vault_generic_secret.ssh.data["ssh_password"]
       host     = aws_instance.main.private_ip
     }
 
