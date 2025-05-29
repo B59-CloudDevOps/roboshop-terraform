@@ -31,7 +31,7 @@ resource "null_resource" "app" {
 
     inline = [
       "sudo yum install -y git",
-      "ansible-pull -i localhost, -U  https://github.com/B59-CloudDevOps/roboshop-ansible.git  -e env=${var.env} -e token=${var.token}  -e component=${var.name} roboshop.yaml"
+      "ansible-pull -i localhost, -U  https://github.com/B59-CloudDevOps/roboshop-ansible.git  -e env=${var.env} -e token=${var.token}  -e component=${var.name} roboshop-pull.yaml"
     ]
   }
 }
