@@ -33,6 +33,3 @@ pipeline {
         }
     }
 }
-
-
-terraform ${action} -var-file=env-${env}/main.tfvars -var token=${token} -auto-approve
