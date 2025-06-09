@@ -1,6 +1,4 @@
 module "vpc" {
-  #source   = "git::https://github.com/B59-CloudDevOps/tf-module-vpc.git"
-  #   source    = "git::https://github.com/B59-CloudDevOps/tf-modulep-vpc.git"
   source   = "git::https://github.com/B59-CloudDevOps/tf-modulep-vpc.git"
   for_each = var.vpc
 
