@@ -1,5 +1,5 @@
-module "roboshop_vpc" {
-  source   = "git::https://github.com/B59-CloudDevOps/roboshop-terraform.git"
+module "vpc" {
+  source   = "git::https://github.com/B59-CloudDevOps/tf-module-vpc.git"
   for_each = var.vpc
 
   env                   = var.env
