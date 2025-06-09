@@ -9,9 +9,9 @@ pipeline {
         choice(name: 'environment', choices: ['dev', 'prod'], description: 'Select the environment')
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action')
     }
-    environment {
-        vault_token = credentials('vault_token') 
-    }
+    // environment {
+    //     vault_token = credentials('vault_token') 
+    // }
     stages {
         stage('Terraform Init') {
             steps {
