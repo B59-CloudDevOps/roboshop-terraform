@@ -1,4 +1,4 @@
 variable "env" {}
 variable "vpc" {}
 variable "tags" {}
-# variable "token" {}
+variable "azs" {}
