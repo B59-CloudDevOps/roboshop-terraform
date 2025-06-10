@@ -9,4 +9,8 @@ module "vpc" {
   db_subnet_cidr_block  = each.value["db_subnet_cidr_block"]
   az                    = each.value["az"]
   tags                  = var.tags
+
+  default_vpc_id         = each.value["default_vpc_id"]
+  default_vpc_cidr_block = each.value["default_vpc_cidr_block"]
+  default_vpc_rt         = each.value["default_vpc_rt"]
 }
